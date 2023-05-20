@@ -8,9 +8,12 @@ RUN apt-get update && \
 
 # Copy the Nginx config
 COPY default /etc/nginx/sites-available/default
+#COPY mysourcecode /APP
 
 # Expose the port for access
 EXPOSE 80/tcp
 
 # Run the Nginx server
 CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
+
+#CMD ["node.js"]
